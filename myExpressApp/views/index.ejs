@@ -5,24 +5,244 @@
   <title>
     <%= title %>
   </title>
+  <!-- Add this line in the <head> section of your HTML file -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/theme.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/portalbasictheme.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="https://content.powerapps.com/resource/powerappsportal/dist/pcf-style.bundle-0d8f841437.css" rel="stylesheet"> -->
+
 </head>
 
 <body>
-  
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to <%= title %>
-  </p>
-  <button id="chatbot-button" class="button1" style="text-align: center; margin-left: auto; margin-right: auto;">Ask a
-    question</button>
+  <!-- Add these lines before the closing </body> tag -->
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+
+<!-- Add this line before the closing </body> tag, after jQuery and Popper.js -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    window.DisableCkEditor = window.DisableCkEditor || {};
+DisableCkEditor.Value = 'False';
+</script>
+<script type="text/javascript">
+  var isPvaBotAuthenticated = sessionStorage['isPvaBotAuthenticated'];
+  var isPortalUserLoggedIn = 'False';
+
+      if ((isPvaBotAuthenticated != null || isPvaBotAuthenticated != undefined) && isPvaBotAuthenticated != isPortalUserLoggedIn) {
+    sessionStorage['triggerPvaBotSignOut'] = true;
+    sessionStorage.removeItem('c2Token');
+          sessionStorage.removeItem('directLinetoken');
+          sessionStorage.removeItem('conversation_Id');
+  }
+  sessionStorage['isPvaBotAuthenticated'] = isPortalUserLoggedIn;
+  </script>
+  <script type="text/javascript">
+		var isPvaBotAuthenticated = sessionStorage['isPvaBotAuthenticated'];
+		var isPortalUserLoggedIn = 'False';
+
+        if ((isPvaBotAuthenticated != null || isPvaBotAuthenticated != undefined) && isPvaBotAuthenticated != isPortalUserLoggedIn) {
+			sessionStorage['triggerPvaBotSignOut'] = true;
+			sessionStorage.removeItem('c2Token');
+            sessionStorage.removeItem('directLinetoken');
+            sessionStorage.removeItem('conversation_Id');
+		}
+		sessionStorage['isPvaBotAuthenticated'] = isPortalUserLoggedIn;
+    </script>
+  <div class="navbar navbar-inverse navbar-static-top" role="banner">
+    <div class="skip-to-content">
+      <a href="#mainContent">Skip to main content</a>
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <div class="visible-sm-block visible-md-block visible-lg-block visible-xs-block navbar-brand">
+          <div class="xrm-editable-html xrm-attribute" data-languagecontext="English">
+            <div class="xrm-attribute-value"><a href="~/">
+                <img src="/images/Logo-sm-64.png
+  " alt="Contoso Limited
+  " style="width: auto; height: 32px; margin: 0 10px;">
+                <h1 class="siteTitle">Contoso Insurance</h1>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="navbar-toggle collapsed" title="Toggle navigation
+  " data-toggle="collapse" data-target="#navbar" aria-expanded="false" onclick="setHeight();">
+          <span class="sr-only">Toggle navigation
+          </span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse" style="max-height: 1178px;">
+
+
+        <nav aria-label="Main Navigation" class="navbar-right menu-bar " data-weblinks-maxdepth="2">
+          <ul class="nav navbar-nav weblinks">
+            <li class="weblink ">
+              <a aria-label="Home" href="/" aria-roledescription="link" title="Home" aria-current="page">
+                Home
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    window.onload = function () {
+      if (window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('Trident') > 0) {
+        var searchElement = document.getElementById('search');
+        if (searchElement != null) searchElement.setAttribute('href', '');
+      }
+    };
+    function setHeight() {
+      var windowHeight = window.innerHeight - 140;
+      var navbar = document.getElementById('navbar');
+      if (navbar) {
+        navbar.style.maxHeight = windowHeight + 'px';
+      }
+    }
+    window.addEventListener('resize', function (event) {
+      setHeight();
+    });
+  </script>
+
+  <div id="mainContent" class="wrapper-body" role="main">
+    <div class="page-copy">
+      <div class="xrm-editable-html xrm-attribute">
+        <div class="xrm-attribute-value">
+          <div data-component-theme="portalThemeColor8" class="row sectionBlockLayout"
+            style="display: flex; flex-wrap: wrap; min-height: 50%; background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542744173-8e9a6e7f9c74?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60'); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+            <div class="container">
+              <div class="col-md-12 columnBlockLayout"
+                style="flex-grow: 1; display: flex; flex-direction: column; margin: 240px 0px;">
+                <h1 style="text-align: center;">Welcome to Contoso Insurance</h1>
+                <h4 style="text-align: center;">Protecting your home, life, and auto</h4><button class="button1"
+                  style="text-align: center; margin-left: auto; margin-right: auto;">Get a Quote</button>
+              </div>
+            </div>
+          </div>
+          <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; min-height: auto;">
+            <div class="container">
+              <div class="col-md-6 columnBlockLayout"
+                style="flex-grow: 1; display: flex; flex-direction: column; margin: 30px 0px; padding: 30px;"><img
+                  style="width: 100%; height: auto; border-radius: 50px;" alt="Home Insurance"
+                  src="https://cdn.hubblecontent.msit.osi.office.net/m365content/publish/11b97469-2733-4dcd-b1a6-3be27ae498b6/thumbnails/xxlarge.jpg">
+                <h2>Home Insurance</h2>
+                <p>Protect your home and personal property with our comprehensive home insurance coverage.</p><button
+                  class="button1">Learn More</button>
+              </div>
+              <div class="col-md-6 columnBlockLayout"
+                style="flex-grow: 1; display: flex; flex-direction: column; margin: 30px 0px; padding: 30px;"><img
+                  style="width: 100%; height: auto; border-radius: 50px;" alt="Life Insurance"
+                  src="https://cdn.hubblecontent.msit.osi.office.net/m365content/publish/d7db150d-2aae-4043-aebc-2d9ba5cde654/thumbnails/xxlarge.jpg">
+                <h2>Life Insurance</h2>
+                <p>Ensure your loved ones are taken care of with our life insurance policies.</p><button
+                  class="button1">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; min-height: auto;">
+            <div class="container">
+              <div class="col-md-8 columnBlockLayout"
+                style="flex-grow: 1; display: flex; flex-direction: column; margin: 30px 0px; padding: 30px;"><img
+                  style="width: 100%; height: auto; border-radius: 50px;" alt="Auto Insurance"
+                  src="https://cdn.hubblecontent.msit.osi.office.net/m365content/publish/8ff33934-783b-42e5-a0da-3037159f81b1/thumbnails/xxlarge.jpg">
+                <h2>Auto Insurance</h2>
+                <p>Drive with confidence knowing you're covered with our auto insurance policies.</p><button
+                  class="button1">Learn More</button>
+              </div>
+              <div class="col-md-4 columnBlockLayout"
+                style="flex-grow: 1; display: flex; flex-direction: column; margin: 30px 0px; padding: 30px;">
+                <h2>Why Choose Us?</h2>
+                <p>At Contoso Insurance, we're dedicated to providing our customers with the best possible coverage and
+                  service. Here are just a few reasons to choose us:</p>
+                <ul>
+                  <li>24/7 Claims Service</li>
+                  <li>Flexible Payment Options</li>
+                  <li>Expert Agents</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; min-height: auto;">
+            <div class="container">
+              <div class="col-md-4 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column;"><img
+                  style="width: 100%; height: auto; border-radius: 50px;" alt="Home Insurance"
+                  src="https://cdn.hubblecontent.msit.osi.office.net/m365content/publish/91e286b3-c99f-4b8e-8104-b37b0e4cf6ae/thumbnails/xxlarge.jpg">
+                <h3 style="text-align: left;">Home Insurance</h3>
+                <p class="smallText">Protect your home and personal property with our comprehensive home insurance
+                  coverage.</p>
+              </div>
+              <div class="col-md-4 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column;"><img
+                  style="width: 100%; height: auto; border-radius: 50px;" alt="Life Insurance"
+                  src="https://cdn.hubblecontent.msit.osi.office.net/m365content/publish/86f485fc-336e-45ba-88d2-a6dae35f1009/thumbnails/xxlarge.jpg">
+                <h3 style="text-align: left;">Life Insurance</h3>
+                <p class="smallText">Ensure your loved ones are taken care of with our life insurance policies.</p>
+              </div>
+              <div class="col-md-4 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column;"><img
+                  style="width: 100%; height: auto; border-radius: 50px;" alt="Auto Insurance"
+                  src="https://cdn.hubblecontent.msit.osi.office.net/m365content/publish/31693816-d65e-41af-b3ca-819e5a442692/thumbnails/xxlarge.jpg">
+                <h3 style="text-align: left;">Auto Insurance</h3>
+                <p class="smallText">Drive with confidence knowing you're covered with our auto insurance policies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+		//this event will update the title of the page based on active breadcrumb
+		$('.breadcrumb').ready(function () {
+			if ($('.breadcrumb').is(':visible')) {
+				document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "");
+			}
+		});
+
+		function GoToNewEditor() {
+			var editCmsUrlSegment = "EditInCms";
+			var currentUrl = window.location.href;
+			if (currentUrl.indexOf('?') > -1) {
+				var urlSegments = currentUrl.split("?");
+				window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+			}
+			else {
+				window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+			}
+		}
+	</script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for(let registration of registrations) {
+        registration.unregister();
+      }}).catch(function(err) {
+      console.log('Service Worker unregister action failed: ', err);
+      });
+    }
+  </script>
+  <svg id="chatbot-button" style="position: fixed; bottom: 0; right: 25px; z-index: 9999;" stroke="blue" fill="none"
+    width="60" height="60" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M2 10.5a7.5 7.5 0 1 1 4.411 6.836c-1.258.29-2.613.54-3.236.652a.996.996 0 0 1-1.153-1.17c.118-.61.38-1.918.681-3.143A7.474 7.474 0 0 1 2 10.5Zm6.144-4.193c-.442.236-.79.603-1.053 1.09a.75.75 0 0 0 1.318.714c.147-.27.298-.404.442-.48.15-.081.354-.13.649-.13.224 0 .487.079.68.238.171.14.32.364.32.761 0 .195-.075.285-.588.688-.45.354-1.162.928-1.162 2.062a.75.75 0 0 0 1.5 0c0-.37.164-.549.588-.883l.085-.065C11.31 10.004 12 9.475 12 8.5c0-.848-.351-1.498-.868-1.922A2.614 2.614 0 0 0 9.5 6.001c-.455 0-.922.074-1.356.306ZM10.5 14a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"
+      fill="#fff" />
+  </svg>
   <div id="chatbot-container" style="display: none; position: fixed; bottom: 0; right: 25px; z-index: 9999;">
-    <button id="chatbot-close-button" data-ppid="b0fffcb1-2e5f-1db1-4ca0-c818f756d441" class="btn btn-danger btn-sm" style="position: absolute; top: 0; right: 0;">Close</button>
-    <iframe
+    <button id="chatbot-close-button" data-ppid="b0fffcb1-2e5f-1db1-4ca0-c818f756d441" class="btn btn-danger btn-sm"
+      style="position: absolute; top: 0; right: 0;">Close</button>
+    <iframe id="chatbot-frame"
       src="https://web.powerva.microsoft.com/environments/ae785cc9-623f-408c-927b-0308045be372/bots/mcd_policyQuote/webchat?__version__=2"
-      frameborder="2" style="width: 30vw; height: 50vh;"></iframe>
+      frameborder="2" style="height: 50vh;"></iframe>
   </div>
 
   <script lang="javascript">
@@ -30,15 +250,19 @@
       var chatbotContainer = document.getElementById("chatbot-container");
       if (chatbotContainer.style.display === "none") {
         chatbotContainer.style.display = "block";
+        self.style.display = "none";
       } else {
         chatbotContainer.style.display = "none";
+        self.style.display = "block";
       }
     });
 
     document.getElementById("chatbot-close-button").addEventListener("click", function () {
       document.getElementById("chatbot-container").style.display = "none";
+      document.getElementById("chatbot-button").style.display = "block";
     });
   </script>
+  
 </body>
 
 </html>
