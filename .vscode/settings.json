@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/c4549451-ca80-4bad-ad92-f02dfdf1cdfe/resourceGroups/PollyCQuoterWeb/providers/Microsoft.Web/sites/PollyCQuoterWeb",
+    "appService.deploySubpath": "."
+}
