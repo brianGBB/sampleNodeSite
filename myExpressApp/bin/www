@@ -21,6 +21,7 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+var options = { index: 'index.html' }; server.use('/', express.static('/home/site/wwwroot', options));
 /**
  * Listen on provided port, on all network interfaces.
  */
